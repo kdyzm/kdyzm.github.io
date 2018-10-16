@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 随笔 | 狂盗一枝梅的博客</title>
+  <title>BeanUtils工具类 | 狂盗一枝梅的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="描述？">
-<meta name="keywords" content="Java笔记,Linux笔记,算法笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="狂盗一枝梅的博客">
-<meta property="og:url" content="http://yoursite.com/categories/随笔/index.html">
+  <meta name="description" content="博客搭建">
+<meta name="keywords" content="Java工具类,BeanUtils">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BeanUtils工具类">
+<meta property="og:url" content="http://yoursite.com/2018/10/16/java/工具方法/BenUtils/index.html">
 <meta property="og:site_name" content="狂盗一枝梅的博客">
-<meta property="og:description" content="描述？">
+<meta property="og:description" content="博客搭建">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-16T09:47:41.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="狂盗一枝梅的博客">
-<meta name="twitter:description" content="描述？">
+<meta name="twitter:title" content="BeanUtils工具类">
+<meta name="twitter:description" content="博客搭建">
   
     <link rel="alternative" href="/atom.xml" title="狂盗一枝梅的博客" type="application/atom+xml">
   
@@ -152,36 +153,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java/工具方法/BenUtils" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/java/工具方法/BenUtils/" class="archive-article-date">
-  	<time datetime="2018-10-16T09:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/java/工具方法/BenUtils/">BeanUtils工具类</a>
+    <h1 class="article-title" itemprop="name">
+      BeanUtils工具类
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/16/java/工具方法/BenUtils/" class="archive-article-date">
+  	<time datetime="2018-10-16T09:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
+</a>
+        
+	
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+	
+      </header>
+    
+
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#map2Bean"><span class="toc-number">1.</span> <span class="toc-text">map2Bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean2Map"><span class="toc-number">2.</span> <span class="toc-text">bean2Map</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p> 工作中，经常会用到各种类型转换问题，经常用到的大概有如下几种转换：map2Bean、Bean2Map、string2Map、string2Bean、bean2JsonStr、map2JsonStr，接下来提供几种方法实现如上的转换<br><a id="more"></a></p>
+</blockquote>
+<p>在此之前，首先需要引入第三方jar包的依赖<br>1.apache common beanutils<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-beanutils<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-beanutils<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="map2Bean"><a href="#map2Bean" class="headerlink" title="map2Bean"></a>map2Bean</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">map2Bean</span><span class="params">(Map&lt;String, ? extends Object&gt; properties, Class&lt;T&gt; clazz)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (CollectionUtils.isEmpty(properties)) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		T newInstance = clazz.newInstance();</span><br><span class="line">		BeanUtils.populate(newInstance, properties);</span><br><span class="line">		<span class="keyword">return</span> newInstance;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		logger.warn(<span class="string">""</span>, e);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="bean2Map"><a href="#bean2Map" class="headerlink" title="bean2Map"></a>bean2Map</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; Map&lt;?, ?&gt; Bean2Map(T t) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> BeanMap(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,7 +234,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -210,68 +247,84 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/29/开篇/开篇/" class="archive-article-date">
-  	<time datetime="2018-07-29T11:01:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/29/开篇/开篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/29/开篇/开篇/">开篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#map2Bean"><span class="toc-number">1.</span> <span class="toc-text">map2Bean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bean2Map"><span class="toc-number">2.</span> <span class="toc-text">bean2Map</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
 
-    
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/10/16/java/工具方法/BenUtils/",
+  owner: 'kdyzm',
+  repo: 'kdyzm.github.io',
+  oauth: {
+    client_id: '6f5bcf6beca5a77573f3',
+    client_secret: 'b88df8e7f263d8558081fed80adae26c42aa04ab',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
+
+
           </div>
         </div>
       </div>
@@ -293,10 +346,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
