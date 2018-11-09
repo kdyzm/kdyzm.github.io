@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 狂盗一枝梅的博客</title>
+  <title>angular4.X集成PrimeNg | 狂盗一枝梅的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="描述？">
-<meta name="keywords" content="Java笔记,Linux笔记,算法笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="狂盗一枝梅的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="angular集成primeng">
+<meta name="keywords" content="前端,Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular4.X集成PrimeNg">
+<meta property="og:url" content="http://yoursite.com/2018/11/09/前端/001.angular集成primeng/index.html">
 <meta property="og:site_name" content="狂盗一枝梅的博客">
-<meta property="og:description" content="描述？">
+<meta property="og:description" content="angular集成primeng">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-09T08:49:58.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="狂盗一枝梅的博客">
-<meta name="twitter:description" content="描述？">
+<meta name="twitter:title" content="angular4.X集成PrimeNg">
+<meta name="twitter:description" content="angular集成primeng">
   
     <link rel="alternative" href="/atom.xml" title="狂盗一枝梅的博客" type="application/atom+xml">
   
@@ -194,36 +195,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-前端/001.angular集成primeng" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/09/前端/001.angular集成primeng/" class="archive-article-date">
-  	<time datetime="2018-11-09T08:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/前端/001.angular集成primeng/">angular4.X集成PrimeNg</a>
+    <h1 class="article-title" itemprop="name">
+      angular4.X集成PrimeNg
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/11/09/前端/001.angular集成primeng/" class="archive-article-date">
+  	<time datetime="2018-11-09T08:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
+</a>
+        
+	
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+	
+      </header>
+    
+
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、primeng简介"><span class="toc-number">1.</span> <span class="toc-text">一、primeng简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、集成到angular-4-x的步骤"><span class="toc-number">2.</span> <span class="toc-text">二、集成到angular 4.x的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-package-json文件加入primeng的依赖及相关依赖"><span class="toc-number">2.1.</span> <span class="toc-text">1.package.json文件加入primeng的依赖及相关依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-修改-angular-cli-json-文件"><span class="toc-number">2.2.</span> <span class="toc-text">2.修改.angular-cli.json 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-引入相关的module"><span class="toc-number">2.3.</span> <span class="toc-text">3.引入相关的module</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Calenar组件的使用"><span class="toc-number">3.</span> <span class="toc-text">三、Calenar组件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、其它组件的使用"><span class="toc-number">4.</span> <span class="toc-text">四、其它组件的使用</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、primeng简介"><a href="#一、primeng简介" class="headerlink" title="一、primeng简介"></a>一、primeng简介</h2><p>官方文档：<a href="https://www.primefaces.org/primeng/#/" target="_blank" rel="noopener">https://www.primefaces.org/primeng/#/</a></p>
+<p>我的理解，primeng像是一个大的前端工具箱吧，提供了各种现成的组件，可以说是能想到的在这个大的工具箱中都能找到相应的组件，而且集成到angular中只需要很简单的步骤即可，非常适用于angular新手上手，比如很有趣的树组件、弹框组件等等。</p>
+<h2 id="二、集成到angular-4-x的步骤"><a href="#二、集成到angular-4-x的步骤" class="headerlink" title="二、集成到angular 4.x的步骤"></a>二、集成到angular 4.x的步骤</h2><p>由于到目前为止（2018-11-09）angular版本号已经升级到了6.X版本，而且primeng也为了适应新特性而升级了一些东西所以对于老版本的anglar是不兼容的，必须要使用指定版本的primeng（这里不得不吐槽一下了，primeng文档永远是最新的，没有老的文档可以查询，而且也没有说明那个版本适用于老的4.x版本，这个做的很失败）。</p>
+<p>这里我们公司使用的是angular4.2.5版本，经过多次摸索之后终于找到了适合的版本号：4.3.0。</p>
+<h3 id="1-package-json文件加入primeng的依赖及相关依赖"><a href="#1-package-json文件加入primeng的依赖及相关依赖" class="headerlink" title="1.package.json文件加入primeng的依赖及相关依赖"></a>1.package.json文件加入primeng的依赖及相关依赖</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"@angular/animations": "4.2.5",</span><br><span class="line">"primeng": "4.3.0",</span><br><span class="line">"font-awesome": "4.7.0"</span><br></pre></td></tr></table></figure>
+<h3 id="2-修改-angular-cli-json-文件"><a href="#2-修改-angular-cli-json-文件" class="headerlink" title="2.修改.angular-cli.json 文件"></a>2.修改.angular-cli.json 文件</h3><p>打开.angular-cli.json 文件，在“styles”中加入：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"../node_modules/font-awesome/css/font-awesome.min.css",</span><br><span class="line">"../node_modules/primeng/resources/primeng.min.css",</span><br><span class="line"><span class="string">"../node_modules/primeng/resources/themes/omega/theme.css"</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-引入相关的module"><a href="#3-引入相关的module" class="headerlink" title="3.引入相关的module"></a>3.引入相关的module</h3><p>使用primeng必须引入<code>BrowserAnimationsModule</code>和<code>BrowserModule</code></p>
+<p>至此，已经完成了对primeng的引入。</p>
+<h2 id="三、Calenar组件的使用"><a href="#三、Calenar组件的使用" class="headerlink" title="三、Calenar组件的使用"></a>三、Calenar组件的使用</h2><p>可以参考：<a href="https://www.jianshu.com/p/7a02d0559476" target="_blank" rel="noopener">https://www.jianshu.com/p/7a02d0559476</a></p>
+<h2 id="四、其它组件的使用"><a href="#四、其它组件的使用" class="headerlink" title="四、其它组件的使用"></a>四、其它组件的使用</h2><p>其它还有一些比较好玩的组件，比如<a href="https://www.primefaces.org/primeng/#/dialog" title="弹框组件" target="_blank" rel="noopener">Dialog</a>组件、<a href="https://www.primefaces.org/primeng/#/confirmdialog" title="弹框确认组件" target="_blank" rel="noopener">ConfirmDialog</a>组件、<a href="https://www.primefaces.org/primeng/#/picklist" title="PickList" target="_blank" rel="noopener">PickList</a>组件等等，都是非常实用的组件了，看着文档很容易就可以搞定了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -239,7 +281,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -252,235 +294,84 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/18/日记/2018/10/2018年10月18日/" class="archive-article-date">
-  	<time datetime="2018-10-18T09:19:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/18/日记/2018/10/2018年10月18日/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2018年10月18日</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/18/日记/2018/10/2018年10月18日/">2018年10月18日</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/日记//" class="article-tag-list-link color3">日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、primeng简介"><span class="toc-number">1.</span> <span class="toc-text">一、primeng简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、集成到angular-4-x的步骤"><span class="toc-number">2.</span> <span class="toc-text">二、集成到angular 4.x的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-package-json文件加入primeng的依赖及相关依赖"><span class="toc-number">2.1.</span> <span class="toc-text">1.package.json文件加入primeng的依赖及相关依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-修改-angular-cli-json-文件"><span class="toc-number">2.2.</span> <span class="toc-text">2.修改.angular-cli.json 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-引入相关的module"><span class="toc-number">2.3.</span> <span class="toc-text">3.引入相关的module</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Calenar组件的使用"><span class="toc-number">3.</span> <span class="toc-text">三、Calenar组件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、其它组件的使用"><span class="toc-number">4.</span> <span class="toc-text">四、其它组件的使用</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/17/日记/2018/10/2018年10月17日/" class="archive-article-date">
-  	<time datetime="2018-10-17T09:07:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/17/日记/2018/10/2018年10月17日/">2018年10月17日</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/日记//" class="article-tag-list-link color3">日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/日记/2018/10/2018年10月16日/" class="archive-article-date">
-  	<time datetime="2018-10-16T11:43:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/日记/2018/10/2018年10月16日/">2018年10月16日</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/日记//" class="article-tag-list-link color3">日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/16/java/工具方法/BenUtils/" class="archive-article-date">
-  	<time datetime="2018-10-16T09:34:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/java/工具方法/BenUtils/">BeanUtils工具类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java工具类</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">BeanUtils</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/29/开篇/开篇/" class="archive-article-date">
-  	<time datetime="2018-07-29T11:01:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/29/开篇/开篇/">开篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
 
-    
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "Fri Nov 09 2018 16:20:53 GMT+0800",
+  owner: 'kdyzm',
+  repo: 'kdyzm.github.io',
+  oauth: {
+    client_id: '6f5bcf6beca5a77573f3',
+    client_secret: 'b88df8e7f263d8558081fed80adae26c42aa04ab',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
+
+
           </div>
         </div>
       </div>
@@ -502,8 +393,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

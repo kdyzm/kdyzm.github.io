@@ -75,6 +75,8 @@
 	        
 				<li><a href="/categories/Spring/">Spring</a></li>
 	        
+				<li><a href="/categories/前端">前端</a></li>
+	        
 				<li><a href="/categories/日记/">日记</a></li>
 	        
 			</ul>
@@ -143,6 +145,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -157,23 +161,25 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 11.11111111111111%"><a href="/">主页</a></li>
+					<li style="width: 10%"><a href="/">主页</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/随笔/">随笔</a></li>
+					<li style="width: 10%"><a href="/categories/随笔/">随笔</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/JVM/">JVM</a></li>
+					<li style="width: 10%"><a href="/categories/JVM/">JVM</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/多线程/">多线程</a></li>
+					<li style="width: 10%"><a href="/categories/多线程/">多线程</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/算法/">算法</a></li>
+					<li style="width: 10%"><a href="/categories/算法/">算法</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/NIO/">NIO</a></li>
+					<li style="width: 10%"><a href="/categories/NIO/">NIO</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/Netty/">Netty</a></li>
+					<li style="width: 10%"><a href="/categories/Netty/">Netty</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/Spring/">Spring</a></li>
+					<li style="width: 10%"><a href="/categories/Spring/">Spring</a></li>
 		        
-					<li style="width: 11.11111111111111%"><a href="/categories/日记/">日记</a></li>
+					<li style="width: 10%"><a href="/categories/前端">前端</a></li>
+		        
+					<li style="width: 10%"><a href="/categories/日记/">日记</a></li>
 		        
 				</ul>
 			</nav>
@@ -189,6 +195,109 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-前端/001.angular集成primeng" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/09/前端/001.angular集成primeng/">angular4.X集成PrimeNg</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/09/前端/001.angular集成primeng/" class="archive-article-date">
+  	<time datetime="2018-11-09T08:20:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
+</a>
+        
+	
+      </header>
+    
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、primeng简介"><a href="#一、primeng简介" class="headerlink" title="一、primeng简介"></a>一、primeng简介</h2><p>官方文档：<a href="https://www.primefaces.org/primeng/#/" target="_blank" rel="noopener">https://www.primefaces.org/primeng/#/</a></p>
+<p>我的理解，primeng像是一个大的前端工具箱吧，提供了各种现成的组件，可以说是能想到的在这个大的工具箱中都能找到相应的组件，而且集成到angular中只需要很简单的步骤即可，非常适用于angular新手上手，比如很有趣的树组件、弹框组件等等。</p>
+<h2 id="二、集成到angular-4-x的步骤"><a href="#二、集成到angular-4-x的步骤" class="headerlink" title="二、集成到angular 4.x的步骤"></a>二、集成到angular 4.x的步骤</h2><p>由于到目前为止（2018-11-09）angular版本号已经升级到了6.X版本，而且primeng也为了适应新特性而升级了一些东西所以对于老版本的anglar是不兼容的，必须要使用指定版本的primeng（这里不得不吐槽一下了，primeng文档永远是最新的，没有老的文档可以查询，而且也没有说明那个版本适用于老的4.x版本，这个做的很失败）。</p>
+<p>这里我们公司使用的是angular4.2.5版本，经过多次摸索之后终于找到了适合的版本号：4.3.0。</p>
+<h3 id="1-package-json文件加入primeng的依赖及相关依赖"><a href="#1-package-json文件加入primeng的依赖及相关依赖" class="headerlink" title="1.package.json文件加入primeng的依赖及相关依赖"></a>1.package.json文件加入primeng的依赖及相关依赖</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"@angular/animations": "4.2.5",</span><br><span class="line">"primeng": "4.3.0",</span><br><span class="line">"font-awesome": "4.7.0"</span><br></pre></td></tr></table></figure>
+<h3 id="2-修改-angular-cli-json-文件"><a href="#2-修改-angular-cli-json-文件" class="headerlink" title="2.修改.angular-cli.json 文件"></a>2.修改.angular-cli.json 文件</h3><p>打开.angular-cli.json 文件，在“styles”中加入：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"../node_modules/font-awesome/css/font-awesome.min.css",</span><br><span class="line">"../node_modules/primeng/resources/primeng.min.css",</span><br><span class="line"><span class="string">"../node_modules/primeng/resources/themes/omega/theme.css"</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-引入相关的module"><a href="#3-引入相关的module" class="headerlink" title="3.引入相关的module"></a>3.引入相关的module</h3><p>使用primeng必须引入<code>BrowserAnimationsModule</code>和<code>BrowserModule</code></p>
+<p>至此，已经完成了对primeng的引入。</p>
+<h2 id="三、Calenar组件的使用"><a href="#三、Calenar组件的使用" class="headerlink" title="三、Calenar组件的使用"></a>三、Calenar组件的使用</h2><p>可以参考：<a href="https://www.jianshu.com/p/7a02d0559476" target="_blank" rel="noopener">https://www.jianshu.com/p/7a02d0559476</a></p>
+<h2 id="四、其它组件的使用"><a href="#四、其它组件的使用" class="headerlink" title="四、其它组件的使用"></a>四、其它组件的使用</h2><p>其它还有一些比较好玩的组件，比如<a href="https://www.primefaces.org/primeng/#/dialog" title="弹框组件" target="_blank" rel="noopener">Dialog</a>组件、<a href="https://www.primefaces.org/primeng/#/confirmdialog" title="弹框确认组件" target="_blank" rel="noopener">ConfirmDialog</a>组件、<a href="https://www.primefaces.org/primeng/#/picklist" title="PickList" target="_blank" rel="noopener">PickList</a>组件等等，都是非常实用的组件了，看着文档很容易就可以搞定了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/09/前端/001.angular集成primeng/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-日记/2018/10/2018年10月18日" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -721,6 +830,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开篇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
